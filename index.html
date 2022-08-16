@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task - Attribute Binding</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="header__section">
+        <p class="header__task-name">💻 Coding Task</p>
+        <p class="header__bootcamp-info-wrapper">
+          <span class="header__bootcamp-modul"
+            ><strong>Modul:</strong> Web Apps with Vue.js - Part 1</span
+          >
+          <a
+            href="https://www.coding-bootcamps.eu/"
+            class="header__bootcamp-link"
+            >coding-bootcamps.eu</a
+          >
+        </p>
+      </section>
+    </header>
+    <main>
+      <div id="app" class="inside">
+        <h1>Task 1</h1>
+        <div id="area" @mousemove="showCoordinates">
+          <span>x: {{ x }}, y: {{ y }}</span>
+          <div class="dead-spot" @mousemove.stop>DEAD SPOT</div>
+        </div>
+        <h1>Task 2</h1>
+        <ul class="fruit-basket">
+          <li
+            v-for="fruit in fruitBasket"
+            :key="fruit"
+            class="fruit-basket--item"
+          >
+            <span>{{ fruit }}</span>
+            <button @click="removeFruitItem(fruit)">Remove</button>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
